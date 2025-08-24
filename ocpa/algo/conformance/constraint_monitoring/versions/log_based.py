@@ -4,7 +4,8 @@ from ocpa.objects.log.ocel import OCEL
 from typing import List, Dict
 
 
-def apply(pg: ConstraintGraph, ocel: OCEL, diag: Dict, parameters=None) -> List[str]:
+def apply(pg: ConstraintGraph, ocel: OCEL, parameters=None) -> List[str]: # modified by waleedalzamil80
+    diag = parameters["diag"]
     evals = []
     for cf_edge in pg.cf_edges:
         evals.append(evaluate_cf_edge(ocel.obj, cf_edge))
