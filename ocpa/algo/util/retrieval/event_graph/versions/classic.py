@@ -4,9 +4,9 @@ from ocpa.objects.graph.event_graph.obj import EventGraph
 import time
 
 
-def apply(ocel, parameters=None):
-    events = [ocel.raw.events[ei] for ei in ocel.raw.events]
-    objects = ocel.raw.objects
+def apply(ocel, parameters=None):                                           # modified by waleedalzamil80
+    events = [ocel.obj.raw.events[ei] for ei in ocel.obj.raw.events]
+    objects = ocel.obj.raw.objects
     graph = nx.DiGraph()
     st = time.time()
     graph.add_nodes_from(events)
